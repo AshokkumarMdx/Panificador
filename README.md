@@ -1,6 +1,10 @@
 Steps:
 
 Clone the repo
+
+git clone https://github.com/AshokkumarMdx/HLF-Multi-Org-Network.git
+
+
 Run Certificates Authority Services for all Orgs
 
 cd artifacts/channel/create-certificates
