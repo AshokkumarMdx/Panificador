@@ -23,11 +23,11 @@ cd artifacts/channel
 
 Run the docker images which is artifacts
 
-cd artifacts
+cd artifacts/
 
 docker-compose up -d
 
-main folder
+cd to main folder
 
 Create Channel and join peers
 
