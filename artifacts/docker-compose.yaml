@@ -91,7 +91,7 @@ services:
 
   orderer.example.com:
     container_name: orderer.example.com
-    image: hyperledger/fabric-orderer:2.1
+    image: hyperledger/fabric-orderer:2.5
     dns_search: .
     environment:
       - ORDERER_GENERAL_LOGLEVEL=info
@@ -126,7 +126,7 @@ services:
 
   orderer2.example.com:
     container_name: orderer2.example.com
-    image: hyperledger/fabric-orderer:2.1
+    image: hyperledger/fabric-orderer:2.5
     dns_search: .
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
@@ -161,7 +161,7 @@ services:
 
   orderer3.example.com:
     container_name: orderer3.example.com
-    image: hyperledger/fabric-orderer:2.1
+    image: hyperledger/fabric-orderer:2.5
     dns_search: .
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
@@ -198,8 +198,8 @@ services:
     container_name: couchdb0
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 5984:5984
     networks:
@@ -209,8 +209,8 @@ services:
     container_name: couchdb1
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 6984:5984
     networks:
@@ -220,8 +220,8 @@ services:
     container_name: couchdb2
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 7984:5984
     networks:
@@ -231,8 +231,8 @@ services:
     container_name: couchdb3
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 8984:5984
     networks:
@@ -242,8 +242,8 @@ services:
     container_name: couchdb4
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 9984:5984
     networks:
@@ -253,8 +253,8 @@ services:
     container_name: couchdb5
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 1984:5984
     networks:
@@ -264,8 +264,8 @@ services:
     container_name: couchdb6
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 2984:5984
     networks:
@@ -275,10 +275,32 @@ services:
     container_name: couchdb7
     image: hyperledger/fabric-couchdb
     environment:
-      - COUCHDB_USER=
-      - COUCHDB_PASSWORD=
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
     ports:
       - 3984:5984
+    networks:
+      - test
+
+  couchdb8:
+    container_name: couchdb8
+    image: hyperledger/fabric-couchdb
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+    ports:
+      - 4984:5984
+    networks:
+      - test
+
+  couchdb9:
+    container_name: couchdb9
+    image: hyperledger/fabric-couchdb
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+    ports:
+      - 2284:5984
     networks:
       - test
 
@@ -307,8 +329,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb0:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/crypto/peer/tls/server.crt
@@ -349,8 +371,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -391,8 +413,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -432,8 +454,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -474,8 +496,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb4:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -515,8 +537,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -557,8 +579,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb6:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -598,8 +620,8 @@ services:
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb7:5984
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_METRICS_PROVIDER=prometheus
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
       - CORE_PEER_TLS_ENABLED=true
@@ -612,6 +634,88 @@ services:
     volumes:
       - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer1.org4.example.com/msp:/etc/hyperledger/crypto/peer/msp
       - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer1.org4.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - /var/run/:/host/var/run/
+      - ./channel/:/etc/hyperledger/channel/
+    networks:
+      - test
+
+  peer0.org5.example.com:
+    container_name: peer0.org5.example.com
+    extends:
+      file: base.yaml
+      service: peer-base
+    environment:
+      - FABRIC_LOGGING_SPEC=DEBUG
+      - ORDERER_GENERAL_LOGLEVEL=debug
+      - CORE_PEER_LOCALMSPID=Org5MSP
+
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
+
+      - CORE_PEER_ID=peer0.org5.example.com
+      - CORE_PEER_ADDRESS=peer0.org5.example.com:15051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:15051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org5.example.com:15052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:15052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org5.example.com:15051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org5.example.com:16051
+
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb8:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+      - CORE_METRICS_PROVIDER=prometheus
+      # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/crypto/peer/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/crypto/peer/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/crypto/peer/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/crypto/peer/msp
+    ports:
+      - 15051:15051
+    volumes:
+      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - /var/run/:/host/var/run/
+      - ./channel/:/etc/hyperledger/channel/
+    networks:
+      - test
+
+  peer1.org5.example.com:
+    container_name: peer1.org5.example.com
+    extends:
+      file: base.yaml
+      service: peer-base
+    environment:
+      - FABRIC_LOGGING_SPEC=DEBUG
+      - ORDERER_GENERAL_LOGLEVEL=debug
+      - CORE_PEER_LOCALMSPID=Org5MSP
+
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
+
+      - CORE_PEER_ID=peer1.org5.example.com
+      - CORE_PEER_ADDRESS=peer1.org5.example.com:16051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:16051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org5.example.com:16052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:14052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org5.example.com:16051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org5.example.com:15051
+
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb9:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+      - CORE_METRICS_PROVIDER=prometheus
+      # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/crypto/peer/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/crypto/peer/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/crypto/peer/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/crypto/peer/msp
+    ports:
+      - 16051:16051
+    volumes:
+      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer1.org5.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer1.org5.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:

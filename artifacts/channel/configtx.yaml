@@ -87,7 +87,7 @@ Organizations:
 
         AnchorPeers:
             - Host: peer0.org3.example.com
-              Port: 1051
+              Port: 10051
 
     - &Org4
         Name: Org4MSP
@@ -318,7 +318,7 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                # - *Org5
+                - *Org5
             Capabilities:
                 <<: *ApplicationCapabilities
     OrdererGenesis:
@@ -358,4 +358,4 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                # - *Org5
+                - *Org5

@@ -992,6 +992,7 @@ createcertificatesForOrg1
 createCertificatesForOrg2
 createCertificatesForOrg3
 createCertificatesForOrg4
+createCertificatesForOrg5
 
 createCretificatesForOrderer
 
