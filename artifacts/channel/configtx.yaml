@@ -111,7 +111,7 @@ Organizations:
             #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.org3.example.com
+            - Host: peer0.org4.example.com
               Port: 11051
 
     - &Org5
@@ -136,7 +136,7 @@ Organizations:
             #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.org3.example.com
+            - Host: peer0.org5.example.com
               Port: 12051
 
 Capabilities:
@@ -321,6 +321,18 @@ Profiles:
                 - *Org5
             Capabilities:
                 <<: *ApplicationCapabilities
+
+    GC_Channel:
+        Consortium: SampleConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org2
+                - *Org3
+            Capabilities:
+                <<: *ApplicationCapabilities
+
     OrdererGenesis:
         <<: *ChannelDefaults
         Capabilities:

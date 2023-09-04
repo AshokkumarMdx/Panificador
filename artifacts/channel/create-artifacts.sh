@@ -13,8 +13,11 @@ SYS_CHANNEL="sys-channel"
 
 # channel name defaults to "mychannel"
 CHANNEL_NAME="mychannel"
-
 echo $CHANNEL_NAME
+
+# Grain Commercial Channel
+GC_CHANNEL_NAME="gcchannel"
+echo $GC_CHANNEL_NAME
 
 # Generate System Genesis block
 configtxgen -profile OrdererGenesis -configPath . -channelID $SYS_CHANNEL  -outputBlock ./genesis.block
@@ -37,3 +40,13 @@ configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org4M
 
 echo "#######    Generating anchor peer update for Org5MSP  ##########"
 configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org5MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org5MSP
+
+
+# Generate channel configuration block for Grain Commercial
+configtxgen -profile GC_Channel -configPath . -outputCreateChannelTx ./$GC_CHANNEL_NAME.tx -channelID $GC_CHANNEL_NAME
+
+echo "#######    Generating anchor peer update for Org2MSP  ##########"
+configtxgen -profile GC_Channel -configPath . -outputAnchorPeersUpdate ./Org2MSPanchors_GC.tx -channelID $GC_CHANNEL_NAME -asOrg Org2MSP
+
+echo "#######    Generating anchor peer update for Org3MSP  ##########"
+configtxgen -profile GC_Channel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors_GC.tx -channelID $GC_CHANNEL_NAME -asOrg Org3MSP

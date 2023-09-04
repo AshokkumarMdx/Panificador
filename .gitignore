@@ -128,6 +128,7 @@ artifacts/src/github.com/fabcar/go/go.sum
 crypto/fabric-client-kv-org1
 fabcar.tar.gz
 test_cc.tar.gz
+org.tar.gz
 *.tar.gz
 multicontracts_cc.tar.gz
 artifacts/src/github.com/fabcar_contract_api/go/vendor
@@ -137,6 +138,7 @@ api-1.4/crypto/org1
 api-1.4/fabric-client-kv-org1
 api-1.4/node_modules
 channel-artifacts/mychannel.block
+channel-artifacts/*.block
 addOrg3/crypto-config/peerOrganizations/org3.example.com
 original_config.pb
 config_block.pb
