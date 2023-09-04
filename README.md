@@ -2,8 +2,7 @@ Steps:
 
 Clone the repo
 
-git clone https://github.com/AshokkumarMdx/HLF-Multi-Org-Network.git
-
+git clone https://github.com/mdxdealstryker/PANIFICADOR-HL-BC.git
 
 Run Certificates Authority Services for all Orgs
 
@@ -32,11 +31,13 @@ cd to main folder
 Create Channel and join peers
 
 ./createChannel.sh
+
 ./createChannel_GC.sh
 
 Deploy Chaincode
 
 ./deployChaincode.sh
+
 ./deployChaincode_GC.sh
 
 ----------
