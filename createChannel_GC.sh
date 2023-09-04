@@ -194,10 +194,10 @@ updateAnchorPeers(){
 # updateAnchorPeers
 
 
-#removeOldCrypto
+removeOldCrypto
 
-#createChannel
-#sleep 4
-#joinChannel
-#sleep 3
+createChannel
+sleep 4
+joinChannel
+sleep 3
 updateAnchorPeers
