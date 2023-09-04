@@ -32,10 +32,12 @@ cd to main folder
 Create Channel and join peers
 
 ./createChannel.sh
+./createChannel_GC.sh
 
 Deploy Chaincode
 
 ./deployChaincode.sh
+./deployChaincode_GC.sh
 
 ----------
 To stop the application
