@@ -1,6 +1,6 @@
 Steps:
 
-Clone the repo
+**Clone the repository**
 
 git clone https://github.com/mdxdealstryker/PANIFICADOR-HL-BC.git
 
