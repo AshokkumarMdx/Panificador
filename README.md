@@ -62,7 +62,7 @@ cd to main folder
 
 ./deployChaincode_GOP.sh         
 
-**(For Flour Channel (Stored Grain Channel): Briker-Ceralisa-Mill)**
+**(For Flour Channel (Stored Grain Channel): Broker-Ceralisa-Mill)**
  
 ./deployChaincode_GS.sh         
 
