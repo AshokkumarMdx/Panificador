@@ -36,15 +36,15 @@ cd to main folder
 
 ./createChannel.sh   
 
-**(For Grain Commercial Channel)**
+**(For Grain Commercial Channel: Farmer-Ceralista)**
 
 ./createChannel_GC.sh      
 
-**(For Grain Operations Channel)**
+**(For Grain Operations Channel: Broker-Farmer-Ceralista)**
  
 ./createChannel_GOP.sh    
 
-**(For Grain Stored Channel)**
+**(For Flour Channel (Stored Grain Channel): Briker-Ceralisa-Mill)**
 
 ./createChannel_GS.sh      
 
@@ -54,15 +54,15 @@ cd to main folder
 
 ./deployChaincode.sh             
 
-**(For Grain Commercial Chaincode)**
+**(For Grain Commercial Channel: Farmer-Ceralista)**
 
 ./deployChaincode_GC.sh          
 
-**(For Grain  Operations Chaincode)**
+**(For Grain Operations Channel: Broker-Farmer-Ceralista)**
 
 ./deployChaincode_GOP.sh         
 
-**(For Grain  Stored  Chaincode)**
+**(For Flour Channel (Stored Grain Channel): Briker-Ceralisa-Mill)**
  
 ./deployChaincode_GS.sh         
 
