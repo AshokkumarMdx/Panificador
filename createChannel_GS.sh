@@ -1,13 +1,12 @@
 export CORE_PEER_TLS_ENABLED=true
 export ORDERER_CA=${PWD}/artifacts/channel/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 export PEER0_ORG1_CA=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
-export PEER0_ORG2_CA=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 export PEER0_ORG3_CA=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt
-#export PEER0_ORG4_CA=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls/ca.crt
-#export PEER0_ORG5_CA=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/tls/ca.crt
+export PEER0_ORG4_CA=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls/ca.crt
+
 export FABRIC_CFG_PATH=${PWD}/artifacts/channel/config/
 
-export CHANNEL_NAME=gopchannel
+export CHANNEL_NAME=gschannel
 
 setGlobalsForOrderer(){
     export CORE_PEER_LOCALMSPID="OrdererMSP"
@@ -31,22 +30,6 @@ setGlobalsForPeer1Org1(){
 
 }
 
-setGlobalsForPeer0Org2(){
-    export CORE_PEER_LOCALMSPID="Org2MSP"
-    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:9051
-
-}
-
-setGlobalsForPeer1Org2(){
-    export CORE_PEER_LOCALMSPID="Org2MSP"
-    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:10051
-
-}
-
 setGlobalsForPeer0Org3(){
     export CORE_PEER_LOCALMSPID="Org3MSP"
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG3_CA
@@ -63,9 +46,27 @@ setGlobalsForPeer1Org3(){
 
 }
 
+setGlobalsForPeer0Org4(){
+   export CORE_PEER_LOCALMSPID="Org4MSP"
+   export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG4_CA
+   export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp
+   export CORE_PEER_ADDRESS=localhost:13051
+
+}
+
+setGlobalsForPeer1Org4(){
+   export CORE_PEER_LOCALMSPID="Org4MSP"
+   export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG4_CA
+   export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp
+   export CORE_PEER_ADDRESS=localhost:14051
+
+}
+
+
+
 createChannel(){
 #    rm -rf ./channel-artifacts/*
-    rm -rf ./channel-artifacts/gopchannel.block
+    rm -rf ./channel-artifacts/gschannel.block
     setGlobalsForPeer0Org1
 
     peer channel create -o localhost:7050 -c $CHANNEL_NAME \
@@ -90,13 +91,6 @@ joinChannel(){
    setGlobalsForPeer1Org1
    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
-   sleep 2
-    setGlobalsForPeer0Org2
-    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
-
-    sleep 2
-    setGlobalsForPeer1Org2
-    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
     sleep 2
     setGlobalsForPeer0Org3
@@ -106,6 +100,23 @@ joinChannel(){
     setGlobalsForPeer1Org3
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
+   sleep 2
+   setGlobalsForPeer0Org4
+   peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+   sleep 2
+   setGlobalsForPeer1Org4
+   peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+#    sleep 2
+#    setGlobalsForPeer0Org5
+#    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+#    sleep 2
+#    setGlobalsForPeer1Org5
+#    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+
 }
 # joinChannel
 
@@ -113,26 +124,29 @@ updateAnchorPeers(){
    setGlobalsForPeer0Org1
    peer channel update -o localhost:7050 \
    --ordererTLSHostnameOverride orderer.example.com \
-   -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors_GOP.tx \
+   -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors_GS.tx \
    --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
-
-    setGlobalsForPeer0Org2
-    peer channel update -o localhost:7050 \
-    --ordererTLSHostnameOverride orderer.example.com \
-    -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors_GOP.tx \
-    --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
 
     setGlobalsForPeer0Org3
     peer channel update -o localhost:7050 \
     --ordererTLSHostnameOverride orderer.example.com \
-    -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors_GOP.tx \
+    -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors_GS.tx \
     --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
+
+   setGlobalsForPeer0Org4
+   peer channel update -o localhost:7050 \
+   --ordererTLSHostnameOverride orderer.example.com \
+   -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors_GS.tx \
+   --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
+
 
 }
 
 # updateAnchorPeers
 
+
 removeOldCrypto
+
 createChannel
 sleep 4
 joinChannel

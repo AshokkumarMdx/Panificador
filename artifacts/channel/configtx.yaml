@@ -344,6 +344,17 @@ Profiles:
                 - *Org3
             Capabilities:
                 <<: *ApplicationCapabilities
+    GS_Channel:
+        Consortium: SampleConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+                - *Org3
+                - *Org4
+            Capabilities:
+                <<: *ApplicationCapabilities
 
     OrdererGenesis:
         <<: *ChannelDefaults
