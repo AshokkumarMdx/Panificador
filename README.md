@@ -35,26 +35,33 @@ Create Channel and join peers
 ./createChannel.sh   
 
 (For Grain Commercial Channel)
+
 ./createChannel_GC.sh      
 
  (For Grain Operations Channel)
+ 
 ./createChannel_GOP.sh    
 
 (For Grain Stored Channel)
+
 ./createChannel_GS.sh      
 
 Deploy Chaincode
 
 (For All Orgs Chaincode)
+
 ./deployChaincode.sh             
 
 (For Grain Commercial Chaincode)
+
 ./deployChaincode_GC.sh          
 
 (For Grain  Operations Chaincode)
+
 ./deployChaincode_GOP.sh         
 
  (For Grain  Stored  Chaincode)
+ 
 ./deployChaincode_GS.sh         
 
 ----------
