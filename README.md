@@ -73,7 +73,7 @@ cd artifacts/
 
 docker-compose down
 
-cd artifacts/channel/create-certificates
+cd artifacts/channel/create-certificate-with-ca
 
 docker-compose down
 
