@@ -44,7 +44,7 @@ cd to main folder
  
 ./createChannel_GOP.sh    
 
-**(For Flour Channel (Stored Grain Channel): Briker-Ceralisa-Mill)**
+**(For Flour Channel (Stored Grain Channel): Broker-Ceralisa-Mill)**
 
 ./createChannel_GS.sh      
 
