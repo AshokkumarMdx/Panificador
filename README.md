@@ -32,7 +32,7 @@ cd to main folder
 
 **Create Channel and join peers**
 
-**(For Broker-Farmer-Ceralista-Mill-Baker Channel)**
+**(For Broker-Farmer-Ceralista-Mill-Baker Channels)**
 
 ./createChannel.sh   
 
