@@ -14,7 +14,7 @@ docker-compose up -d
 
 cd artifacts/channel/create-certificate-with-ca
 
-./create-certificates.sh 
+./create-certificate-with-ca.sh
 
 **Create Channel Artifacts using Org MSP**
 
