@@ -333,6 +333,18 @@ Profiles:
             Capabilities:
                 <<: *ApplicationCapabilities
 
+    GOP_Channel:
+        Consortium: SampleConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+                - *Org2
+                - *Org3
+            Capabilities:
+                <<: *ApplicationCapabilities
+
     OrdererGenesis:
         <<: *ChannelDefaults
         Capabilities:

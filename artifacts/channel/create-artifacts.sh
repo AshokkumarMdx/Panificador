@@ -19,6 +19,10 @@ echo $CHANNEL_NAME
 GC_CHANNEL_NAME="gcchannel"
 echo $GC_CHANNEL_NAME
 
+# Grain Operations Channel
+GOP_CHANNEL_NAME="gopchannel"
+echo $GOP_CHANNEL_NAME
+
 # Generate System Genesis block
 configtxgen -profile OrdererGenesis -configPath . -channelID $SYS_CHANNEL  -outputBlock ./genesis.block
 
@@ -50,3 +54,16 @@ configtxgen -profile GC_Channel -configPath . -outputAnchorPeersUpdate ./Org2MSP
 
 echo "#######    Generating anchor peer update for Org3MSP  ##########"
 configtxgen -profile GC_Channel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors_GC.tx -channelID $GC_CHANNEL_NAME -asOrg Org3MSP
+
+
+# Generate channel configuration block for Grain Commercial
+configtxgen -profile GOP_Channel -configPath . -outputCreateChannelTx ./$GOP_CHANNEL_NAME.tx -channelID $GOP_CHANNEL_NAME
+
+echo "#######    Generating anchor peer update for Org1MSP  ##########"
+configtxgen -profile GOP_Channel -configPath . -outputAnchorPeersUpdate ./Org1MSPanchors_GOP.tx -channelID $GOP_CHANNEL_NAME -asOrg Org1MSP
+
+echo "#######    Generating anchor peer update for Org2MSP  ##########"
+configtxgen -profile GOP_Channel -configPath . -outputAnchorPeersUpdate ./Org2MSPanchors_GOP.tx -channelID $GOP_CHANNEL_NAME -asOrg Org2MSP
+
+echo "#######    Generating anchor peer update for Org3MSP  ##########"
+configtxgen -profile GOP_Channel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors_GOP.tx -channelID $GOP_CHANNEL_NAME -asOrg Org3MSP
