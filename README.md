@@ -11,11 +11,13 @@ cd artifacts/channel/create-certificates
 docker-compose up -d
 
 **Create Cryptomaterials for all organizations**
+
 cd artifacts/channel/create-certificates
 
 ./create-certificates.sh 
 
 **Create Channel Artifacts using Org MSP**
+
 cd artifacts/channel
 
 ./create-artifacts.sh 
