@@ -13,12 +13,12 @@ docker-compose up -d
 Create Cryptomaterials for all organizations
 cd artifacts/channel/create-certificates
 
-./create-certificates.sh
+./create-certificates.sh 
 
 Create Channel Artifacts using Org MSP
 cd artifacts/channel
 
-./create-artifacts.sh
+./create-artifacts.sh 
 
 Run the docker images which is artifacts
 
@@ -30,15 +30,23 @@ cd to main folder
 
 Create Channel and join peers
 
-./createChannel.sh
+./createChannel.sh (For Common Channel) 
 
-./createChannel_GC.sh
+./createChannel_GC.sh  (For Grain Commercial Channel)
+
+./createChannel_GOP.sh  (For Grain Operations Channel)
+
+./createChannel_GS.sh   (For Grain Stored Channel)
 
 Deploy Chaincode
 
 ./deployChaincode.sh
 
 ./deployChaincode_GC.sh
+
+./deployChaincode_GOP.sh
+
+./deployChaincode_GS.sh
 
 ----------
 To stop the application
