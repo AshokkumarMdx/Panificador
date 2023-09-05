@@ -30,23 +30,23 @@ cd to main folder
 
 Create Channel and join peers
 
-./createChannel.sh (For Common Channel) 
+./createChannel.sh         (For Common Channel) 
 
-./createChannel_GC.sh  (For Grain Commercial Channel)
+./createChannel_GC.sh      (For Grain Commercial Channel)
 
-./createChannel_GOP.sh  (For Grain Operations Channel)
+./createChannel_GOP.sh     (For Grain Operations Channel)
 
-./createChannel_GS.sh   (For Grain Stored Channel)
+./createChannel_GS.sh      (For Grain Stored Channel)
 
 Deploy Chaincode
 
-./deployChaincode.sh
+./deployChaincode.sh             (For All Orgs Chaincode)
 
-./deployChaincode_GC.sh
+./deployChaincode_GC.sh          (For Grain Commercial Chaincode)
 
-./deployChaincode_GOP.sh
+./deployChaincode_GOP.sh         (For Grain  Operations Chaincode)
 
-./deployChaincode_GS.sh
+./deployChaincode_GS.sh          (For Grain  Stored  Chaincode)
 
 ----------
 To stop the application
