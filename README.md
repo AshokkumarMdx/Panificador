@@ -4,23 +4,23 @@ Clone the repo
 
 git clone https://github.com/mdxdealstryker/PANIFICADOR-HL-BC.git
 
-Run Certificates Authority Services for all Orgs
+**Run Certificates Authority Services for all Orgs**
 
 cd artifacts/channel/create-certificates
 
 docker-compose up -d
 
-Create Cryptomaterials for all organizations
+**Create Cryptomaterials for all organizations**
 cd artifacts/channel/create-certificates
 
 ./create-certificates.sh 
 
-Create Channel Artifacts using Org MSP
+**Create Channel Artifacts using Org MSP**
 cd artifacts/channel
 
 ./create-artifacts.sh 
 
-Run the docker images which is artifacts
+**Run the docker images which is artifacts**
 
 cd artifacts/
 
@@ -28,44 +28,44 @@ docker-compose up -d
 
 cd to main folder
 
-Create Channel and join peers
+**Create Channel and join peers**
 
-(For Common Channel) 
+**(For Common Channel)**
 
 ./createChannel.sh   
 
-(For Grain Commercial Channel)
+**(For Grain Commercial Channel)**
 
 ./createChannel_GC.sh      
 
- (For Grain Operations Channel)
+**(For Grain Operations Channel)**
  
 ./createChannel_GOP.sh    
 
-(For Grain Stored Channel)
+**(For Grain Stored Channel)**
 
 ./createChannel_GS.sh      
 
-Deploy Chaincode
+**Deploy Chaincode**
 
-(For All Orgs Chaincode)
+**(For All Orgs Chaincode)**
 
 ./deployChaincode.sh             
 
-(For Grain Commercial Chaincode)
+**(For Grain Commercial Chaincode)**
 
 ./deployChaincode_GC.sh          
 
-(For Grain  Operations Chaincode)
+**(For Grain  Operations Chaincode)**
 
 ./deployChaincode_GOP.sh         
 
- (For Grain  Stored  Chaincode)
+**(For Grain  Stored  Chaincode)**
  
 ./deployChaincode_GS.sh         
 
 ----------
-To stop the application
+**To stop the application**
 
 cd artifacts/
 
