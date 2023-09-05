@@ -32,7 +32,7 @@ cd to main folder
 
 **Create Channel and join peers**
 
-**(For Common Channel)**
+**(For Broker-Farmer-Ceralista-Mill-Baker Channel)**
 
 ./createChannel.sh   
 
@@ -44,7 +44,7 @@ cd to main folder
  
 ./createChannel_GOP.sh    
 
-**(For Flour Channel (Stored Grain Channel): Broker-Ceralisa-Mill)**
+**(For Flour Channel (Stored Grain Channel): Broker-Ceralista-Mill)**
 
 ./createChannel_GS.sh      
 
