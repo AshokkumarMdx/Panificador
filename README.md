@@ -12,7 +12,7 @@ docker-compose up -d
 
 **Create Cryptomaterials for all organizations**
 
-cd artifacts/channel/create-certificates
+cd artifacts/channel/create-certificate-with-ca
 
 ./create-certificates.sh 
 
