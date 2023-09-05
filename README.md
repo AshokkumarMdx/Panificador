@@ -6,7 +6,7 @@ git clone https://github.com/mdxdealstryker/PANIFICADOR-HL-BC.git
 
 **Run Certificates Authority Services for all Orgs**
 
-cd artifacts/channel/create-certificate
+cd artifacts/channel/create-certificate-with-ca
 
 docker-compose up -d
 
