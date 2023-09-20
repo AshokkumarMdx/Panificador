@@ -47,3 +47,11 @@ PEERPEM=../../artifacts/channel/crypto-config/peerOrganizations/org4.example.com
 CAPEM=../../artifacts/channel/crypto-config/peerOrganizations/org4.example.com/msp/tlscacerts/ca.crt
 
 echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > connection-org4.json
+
+ORG=5
+P0PORT=15051
+CAPORT=12054
+PEERPEM=../../artifacts/channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/tls/tlscacerts/tls-localhost-12054-ca-org5-example-com.pem
+CAPEM=../../artifacts/channel/crypto-config/peerOrganizations/org4.example.com/msp/tlscacerts/ca.crt
+
+echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > connection-org5.json

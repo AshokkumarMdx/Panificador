@@ -50,6 +50,7 @@ const query = async (channelName, chaincodeName, args, fcn, username, org_name) 
                 break;
             case "GetHistoryForAsset":
             case "GetCarById":
+            case "GetOrgById":
                 console.log("=============")
                 result = await contract.evaluateTransaction(fcn, args[0]);
                 break;
