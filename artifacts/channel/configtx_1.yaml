@@ -14,129 +14,129 @@ Organizations:
                 Type: Signature
                 Rule: "OR('OrdererMSP.admin')"
 
-    - &Broker
-        Name: BrokerMSP
-        ID: BrokerMSP
-        MSPDir: crypto-config/peerOrganizations/broker.example.com/msp
+    - &Org1
+        Name: Org1MSP
+        ID: Org1MSP
+        MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('BrokerMSP.admin', 'BrokerMSP.peer', 'BrokerMSP.client')"
+                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('BrokerMSP.admin', 'BrokerMSP.client')"
+                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('BrokerMSP.admin')"
+                Rule: "OR('Org1MSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('BrokerMSP.peer')"
+                Rule: "OR('Org1MSP.peer')"
             # CustomPolicy:
             #     Type: Signature
-            #     Rule: "OR('BrokerMSP.admin', 'BrokerMSP.client')"
+            #     Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
 
         AnchorPeers:
-            - Host: peer0.broker.example.com
+            - Host: peer0.org1.example.com
               Port: 7051
 
-    - &Farmer
-        Name: FarmerMSP
-        ID: FarmerMSP
-        MSPDir: crypto-config/peerOrganizations/farmer.example.com/msp
+    - &Org2
+        Name: Org2MSP
+        ID: Org2MSP
+        MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('FarmerMSP.admin', 'FarmerMSP.peer', 'FarmerMSP.client')"
+                Rule: "OR('Org2MSP.admin', 'Org2MSP.peer', 'Org2MSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('FarmerMSP.admin', 'FarmerMSP.client')"
+                Rule: "OR('Org2MSP.admin', 'Org2MSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('FarmerMSP.admin')"
+                Rule: "OR('Org2MSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('FarmerMSP.peer')"
+                Rule: "OR('Org2MSP.peer')"
             # CustomPolicy:
             #     Type: Signature
-            #     Rule: "OR('BrokerMSP.admin')"
+            #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.farmer.example.com
+            - Host: peer0.org2.example.com
               Port: 9051
 
-    - &Cerealist
-        Name: CerealistMSP
-        ID: CerealistMSP
-        MSPDir: crypto-config/peerOrganizations/cerealist.example.com/msp
+    - &Org3
+        Name: Org3MSP
+        ID: Org3MSP
+        MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('CerealistMSP.admin', 'CerealistMSP.peer', 'CerealistMSP.client')"
+                Rule: "OR('Org3MSP.admin', 'Org3MSP.peer', 'Org3MSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('CerealistMSP.admin', 'CerealistMSP.client')"
+                Rule: "OR('Org3MSP.admin', 'Org3MSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('CerealistMSP.admin')"
+                Rule: "OR('Org3MSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('CerealistMSP.peer')"
+                Rule: "OR('Org3MSP.peer')"
             # CustomPolicy:
             #     Type: Signature
-            #     Rule: "OR('BrokerMSP.admin')"
+            #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.cerealist.example.com
+            - Host: peer0.org3.example.com
               Port: 10051
 
-    - &Mills
-        Name: MillsMSP
-        ID: MillsMSP
-        MSPDir: crypto-config/peerOrganizations/mills.example.com/msp
+    - &Org4
+        Name: Org4MSP
+        ID: Org4MSP
+        MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('MillsMSP.admin', 'MillsMSP.peer', 'MillsMSP.client')"
+                Rule: "OR('Org4MSP.admin', 'Org4MSP.peer', 'Org4MSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('MillsMSP.admin', 'MillsMSP.client')"
+                Rule: "OR('Org4MSP.admin', 'Org4MSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('MillsMSP.admin')"
+                Rule: "OR('Org4MSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('MillsMSP.peer')"
+                Rule: "OR('Org4MSP.peer')"
             # CustomPolicy:
             #     Type: Signature
-            #     Rule: "OR('BrokerMSP.admin')"
+            #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.mills.example.com
+            - Host: peer0.org4.example.com
               Port: 11051
 
-    - &Baker
-        Name: BakerMSP
-        ID: BakerMSP
-        MSPDir: crypto-config/peerOrganizations/baker.example.com/msp
+    - &Org5
+        Name: Org5MSP
+        ID: Org5MSP
+        MSPDir: crypto-config/peerOrganizations/org5.example.com/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('BakerMSP.admin', 'BakerMSP.peer', 'BakerMSP.client')"
+                Rule: "OR('Org5MSP.admin', 'Org5MSP.peer', 'Org5MSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('BakerMSP.admin', 'BakerMSP.client')"
+                Rule: "OR('Org5MSP.admin', 'Org5MSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('BakerMSP.admin')"
+                Rule: "OR('Org5MSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('BakerMSP.peer')"
+                Rule: "OR('Org5MSP.peer')"
             # CustomPolicy:
             #     Type: Signature
-            #     Rule: "OR('BrokerMSP.admin')"
+            #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.baker.example.com
+            - Host: peer0.org5.example.com
               Port: 12051
 
 Capabilities:
@@ -314,45 +314,45 @@ Profiles:
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Broker
-                - *Farmer
-                - *Cerealist
-                - *Mills
-                - *Baker
+                - *Org1
+                - *Org2
+                - *Org3
+                - *Org4
+                - *Org5
             Capabilities:
                 <<: *ApplicationCapabilities
 
-    FC_Channel:
+    GC_Channel:
         Consortium: SampleConsortium
         <<: *ChannelDefaults
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Farmer
-                - *Cerealist
+                - *Org2
+                - *Org3
             Capabilities:
                 <<: *ApplicationCapabilities
 
-    BFC_Channel:
+    GOP_Channel:
         Consortium: SampleConsortium
         <<: *ChannelDefaults
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Broker
-                - *Farmer
-                - *Cerealist
+                - *Org1
+                - *Org2
+                - *Org3
             Capabilities:
                 <<: *ApplicationCapabilities
-    BCM_Channel:
+    GS_Channel:
         Consortium: SampleConsortium
         <<: *ChannelDefaults
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Broker
-                - *Cerealist
-                - *Mills
+                - *Org1
+                - *Org3
+                - *Org4
             Capabilities:
                 <<: *ApplicationCapabilities
 
@@ -389,8 +389,8 @@ Profiles:
         Consortiums:
             SampleConsortium:
                 Organizations:
-                - *Broker
-                - *Farmer
-                - *Cerealist
-                - *Mills
-                - *Baker
+                - *Org1
+                - *Org2
+                - *Org3
+                - *Org4
+                - *Org5

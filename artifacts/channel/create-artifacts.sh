@@ -4,7 +4,7 @@ rm genesis.block mychannel.tx
 rm -rf ../../channel-artifacts/*
 
 #Generate Crypto artifactes for organizations
-# cryptogen generate --config=./crypto-config.yaml --output=./crypto-config/
+cryptogen generate --config=./crypto-config.yaml --output=./crypto-config/
 
 
 
@@ -16,16 +16,16 @@ CHANNEL_NAME="mychannel"
 echo $CHANNEL_NAME
 
 # Grain Commercial Channel
-GC_CHANNEL_NAME="gcchannel"
-echo $GC_CHANNEL_NAME
+FC_CHANNEL_NAME="fcchannel"
+echo $FC_CHANNEL_NAME
 
 # Grain Operations Channel
-GOP_CHANNEL_NAME="gopchannel"
-echo $GOP_CHANNEL_NAME
+BFC_CHANNEL_NAME="bfcchannel"
+echo $BFC_CHANNEL_NAME
 
 # Grain Stored Channel
-GS_CHANNEL_NAME="gschannel"
-echo $GS_CHANNEL_NAME
+BCM_CHANNEL_NAME="bcmchannel"
+echo $BCM_CHANNEL_NAME
 
 
 # Generate System Genesis block
@@ -35,53 +35,53 @@ configtxgen -profile OrdererGenesis -configPath . -channelID $SYS_CHANNEL  -outp
 # Generate channel configuration block
 configtxgen -profile BasicChannel -configPath . -outputCreateChannelTx ./$CHANNEL_NAME.tx -channelID $CHANNEL_NAME
 
-echo "#######    Generating anchor peer update for Org1MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+echo "#######    Generating anchor peer update for BrokerMSP  ##########"
+configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./BrokerMSPanchors.tx -channelID $CHANNEL_NAME -asOrg BrokerMSP
 
-echo "#######    Generating anchor peer update for Org2MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
+echo "#######    Generating anchor peer update for FarmerMSP  ##########"
+configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./FarmerMSPanchors.tx -channelID $CHANNEL_NAME -asOrg FarmerMSP
 
-echo "#######    Generating anchor peer update for Org3MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org3MSP
+echo "#######    Generating anchor peer update for CerealistMSP  ##########"
+configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./CerealistMSPanchors.tx -channelID $CHANNEL_NAME -asOrg CerealistMSP
 
-echo "#######    Generating anchor peer update for Org4MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org4MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org4MSP
+echo "#######    Generating anchor peer update for MillsMSP  ##########"
+configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./MillsMSPanchors.tx -channelID $CHANNEL_NAME -asOrg MillsMSP
 
-echo "#######    Generating anchor peer update for Org5MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org5MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org5MSP
-
-
-# Generate channel configuration block for Grain Commercial
-configtxgen -profile GC_Channel -configPath . -outputCreateChannelTx ./$GC_CHANNEL_NAME.tx -channelID $GC_CHANNEL_NAME
-
-echo "#######    Generating anchor peer update for Org2MSP  ##########"
-configtxgen -profile GC_Channel -configPath . -outputAnchorPeersUpdate ./Org2MSPanchors_GC.tx -channelID $GC_CHANNEL_NAME -asOrg Org2MSP
-
-echo "#######    Generating anchor peer update for Org3MSP  ##########"
-configtxgen -profile GC_Channel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors_GC.tx -channelID $GC_CHANNEL_NAME -asOrg Org3MSP
+echo "#######    Generating anchor peer update for BakerMSP  ##########"
+configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./BakerMSPanchors.tx -channelID $CHANNEL_NAME -asOrg BakerMSP
 
 
 # Generate channel configuration block for Grain Commercial
-configtxgen -profile GOP_Channel -configPath . -outputCreateChannelTx ./$GOP_CHANNEL_NAME.tx -channelID $GOP_CHANNEL_NAME
+configtxgen -profile FC_Channel -configPath . -outputCreateChannelTx ./$FC_CHANNEL_NAME.tx -channelID $FC_CHANNEL_NAME
 
-echo "#######    Generating anchor peer update for Org1MSP  ##########"
-configtxgen -profile GOP_Channel -configPath . -outputAnchorPeersUpdate ./Org1MSPanchors_GOP.tx -channelID $GOP_CHANNEL_NAME -asOrg Org1MSP
+echo "#######    Generating anchor peer update for FarmerMSP  ##########"
+configtxgen -profile FC_Channel -configPath . -outputAnchorPeersUpdate ./FarmerMSPanchors_FC.tx -channelID $FC_CHANNEL_NAME -asOrg FarmerMSP
 
-echo "#######    Generating anchor peer update for Org2MSP  ##########"
-configtxgen -profile GOP_Channel -configPath . -outputAnchorPeersUpdate ./Org2MSPanchors_GOP.tx -channelID $GOP_CHANNEL_NAME -asOrg Org2MSP
+echo "#######    Generating anchor peer update for CerealistMSP  ##########"
+configtxgen -profile FC_Channel -configPath . -outputAnchorPeersUpdate ./CerealistMSPanchors_FC.tx -channelID $FC_CHANNEL_NAME -asOrg CerealistMSP
 
-echo "#######    Generating anchor peer update for Org3MSP  ##########"
-configtxgen -profile GOP_Channel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors_GOP.tx -channelID $GOP_CHANNEL_NAME -asOrg Org3MSP
+
+# Generate channel configuration block for Grain Commercial
+configtxgen -profile BFC_Channel -configPath . -outputCreateChannelTx ./$BFC_CHANNEL_NAME.tx -channelID $BFC_CHANNEL_NAME
+
+echo "#######    Generating anchor peer update for BrokerMSP  ##########"
+configtxgen -profile BFC_Channel -configPath . -outputAnchorPeersUpdate ./BrokerMSPanchors_BFC.tx -channelID $BFC_CHANNEL_NAME -asOrg BrokerMSP
+
+echo "#######    Generating anchor peer update for FarmerMSP  ##########"
+configtxgen -profile BFC_Channel -configPath . -outputAnchorPeersUpdate ./FarmerMSPanchors_BFC.tx -channelID $BFC_CHANNEL_NAME -asOrg FarmerMSP
+
+echo "#######    Generating anchor peer update for CerealistMSP  ##########"
+configtxgen -profile BFC_Channel -configPath . -outputAnchorPeersUpdate ./CerealistMSPanchors_BFC.tx -channelID $BFC_CHANNEL_NAME -asOrg CerealistMSP
 
 
 # Generate channel configuration block for Grain Srored
-configtxgen -profile GS_Channel -configPath . -outputCreateChannelTx ./$GS_CHANNEL_NAME.tx -channelID $GS_CHANNEL_NAME
+configtxgen -profile BCM_Channel -configPath . -outputCreateChannelTx ./$BCM_CHANNEL_NAME.tx -channelID $BCM_CHANNEL_NAME
 
-echo "#######    Generating anchor peer update for Org1MSP  ##########"
-configtxgen -profile GS_Channel -configPath . -outputAnchorPeersUpdate ./Org1MSPanchors_GS.tx -channelID $GS_CHANNEL_NAME -asOrg Org1MSP
+echo "#######    Generating anchor peer update for BrokerMSP  ##########"
+configtxgen -profile BCM_Channel -configPath . -outputAnchorPeersUpdate ./BrokerMSPanchors_BCM.tx -channelID $BCM_CHANNEL_NAME -asOrg BrokerMSP
 
-echo "#######    Generating anchor peer update for Org3MSP  ##########"
-configtxgen -profile GS_Channel -configPath . -outputAnchorPeersUpdate ./Org3MSPanchors_GS.tx -channelID $GS_CHANNEL_NAME -asOrg Org3MSP
+echo "#######    Generating anchor peer update for CerealistMSP  ##########"
+configtxgen -profile BCM_Channel -configPath . -outputAnchorPeersUpdate ./CerealistMSPanchors_BCM.tx -channelID $BCM_CHANNEL_NAME -asOrg CerealistMSP
 
-echo "#######    Generating anchor peer update for Org4MSP  ##########"
-configtxgen -profile GS_Channel -configPath . -outputAnchorPeersUpdate ./Org4MSPanchors_GS.tx -channelID $GS_CHANNEL_NAME -asOrg Org4MSP
+echo "#######    Generating anchor peer update for MillsMSP  ##########"
+configtxgen -profile BCM_Channel -configPath . -outputAnchorPeersUpdate ./MillsMSPanchors_BCM.tx -channelID $BCM_CHANNEL_NAME -asOrg MillsMSP

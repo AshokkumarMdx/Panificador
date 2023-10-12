@@ -4,88 +4,88 @@ networks:
   test:
 
 services:
-#   ca-org1:
+#   ca-broker:
 #     image: hyperledger/fabric-ca
 #     environment:
 #       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-#       - FABRIC_CA_SERVER_CA_NAME=ca.org1.example.com
-#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
+#       - FABRIC_CA_SERVER_CA_NAME=ca.broker.example.com
+#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.broker.example.com-cert.pem
 #       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
 #       - FABRIC_CA_SERVER_TLS_ENABLED=true
-#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org1.example.com-cert.pem
+#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.broker.example.com-cert.pem
 #       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
 #     ports:
 #       - "7054:7054"
 #     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
 #     volumes:
-#       - ./channel/crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-#       - ./channel/crypto-config/peerOrganizations/org1.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-#     container_name: ca.org1.example.com
-#     hostname: ca.org1.example.com
+#       - ./channel/crypto-config/peerOrganizations/broker.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
+#       - ./channel/crypto-config/peerOrganizations/broker.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+#     container_name: ca.broker.example.com
+#     hostname: ca.broker.example.com
 #     networks:
 #       - test
 
-#   ca-org2:
+#   ca-farmer:
 #     image: hyperledger/fabric-ca
 #     environment:
 #       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-#       - FABRIC_CA_SERVER_CA_NAME=ca.org2.example.com
-#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.example.com-cert.pem
+#       - FABRIC_CA_SERVER_CA_NAME=ca.farmer.example.com
+#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.farmer.example.com-cert.pem
 #       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
 #       - FABRIC_CA_SERVER_TLS_ENABLED=true
-#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org2.example.com-cert.pem
+#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.farmer.example.com-cert.pem
 #       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
 #     ports:
 #       - "8054:7054"
 #     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
 #     volumes:
-#       - ./channel/crypto-config/peerOrganizations/org2.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-#       - ./channel/crypto-config/peerOrganizations/org2.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-#     container_name: ca.org2.example.com
-#     hostname: ca.org2.example.com
+#       - ./channel/crypto-config/peerOrganizations/farmer.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
+#       - ./channel/crypto-config/peerOrganizations/farmer.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+#     container_name: ca.farmer.example.com
+#     hostname: ca.farmer.example.com
 #     networks:
 #       - test
 
-#   ca-org3:
+#   ca-cerealist:
 #     image: hyperledger/fabric-ca
 #     environment:
 #       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-#       - FABRIC_CA_SERVER_CA_NAME=ca.org3.example.com
-#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.example.com-cert.pem
+#       - FABRIC_CA_SERVER_CA_NAME=ca.cerealist.example.com
+#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.cerealist.example.com-cert.pem
 #       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
 #       - FABRIC_CA_SERVER_TLS_ENABLED=true
-#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org3.example.com-cert.pem
+#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.cerealist.example.com-cert.pem
 #       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
 #     ports:
 #       - "9054:7054"
 #     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
 #     volumes:
-#       - ./channel/crypto-config/peerOrganizations/org3.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-#       - ./channel/crypto-config/peerOrganizations/org3.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-#     container_name: ca.org3.example.com
-#     hostname: ca.org3.example.com
+#       - ./channel/crypto-config/peerOrganizations/cerealist.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
+#       - ./channel/crypto-config/peerOrganizations/cerealist.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+#     container_name: ca.cerealist.example.com
+#     hostname: ca.cerealist.example.com
 #     networks:
 #       - test
 
 
-#   ca-org4:
+#   ca-mills:
 #     image: hyperledger/fabric-ca
 #     environment:
 #       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-#       - FABRIC_CA_SERVER_CA_NAME=ca.org4.example.com
-#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.example.com-cert.pem
+#       - FABRIC_CA_SERVER_CA_NAME=ca.mills.example.com
+#       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.mills.example.com-cert.pem
 #       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
 #       - FABRIC_CA_SERVER_TLS_ENABLED=true
-#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org4.example.com-cert.pem
+#       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.mills.example.com-cert.pem
 #       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
 #     ports:
 #       - "10054:7054"
 #     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
 #     volumes:
-#       - ./channel/crypto-config/peerOrganizations/org4.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-#       - ./channel/crypto-config/peerOrganizations/org4.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-#     container_name: ca.org4.example.com
-#     hostname: ca.org4.example.com
+#       - ./channel/crypto-config/peerOrganizations/mills.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
+#       - ./channel/crypto-config/peerOrganizations/mills.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+#     container_name: ca.mills.example.com
+#     hostname: ca.mills.example.com
 #     networks:
 #       - test
 
@@ -369,26 +369,26 @@ services:
     networks:
       - test
 
-        ##org2
-  peer0.org1.example.com:
-    container_name: peer0.org1.example.com
+        ##farmer
+  peer0.broker.example.com:
+    container_name: peer0.broker.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=BrokerMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org1.example.com
-      - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+      - CORE_PEER_ID=peer0.broker.example.com
+      - CORE_PEER_ADDRESS=peer0.broker.example.com:7051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org1.example.com:7052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.broker.example.com:7052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.example.com:8051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.broker.example.com:8051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.broker.example.com:7051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -412,32 +412,32 @@ services:
     ports:
       - 7051:7051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/broker.example.com/peers/peer0.broker.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/broker.example.com/peers/peer0.broker.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org1.example.com:
-    container_name: peer1.org1.example.com
+  peer1.broker.example.com:
+    container_name: peer1.broker.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=BrokerMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org1.example.com
-      - CORE_PEER_ADDRESS=peer1.org1.example.com:8051
+      - CORE_PEER_ID=peer1.broker.example.com
+      - CORE_PEER_ADDRESS=peer1.broker.example.com:8051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org1.example.com:8052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.broker.example.com:8052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:8052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.example.com:8051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.example.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.broker.example.com:8051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.broker.example.com:7051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
@@ -458,33 +458,33 @@ services:
     ports:
       - 8051:8051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/broker.example.com/peers/peer1.broker.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/broker.example.com/peers/peer1.broker.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-        ##org2
-  peer0.org2.example.com:
-    container_name: peer0.org2.example.com
+        ##farmer
+  peer0.farmer.example.com:
+    container_name: peer0.farmer.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org2MSP
+      - CORE_PEER_LOCALMSPID=FarmerMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org2.example.com
-      - CORE_PEER_ADDRESS=peer0.org2.example.com:9051
+      - CORE_PEER_ID=peer0.farmer.example.com
+      - CORE_PEER_ADDRESS=peer0.farmer.example.com:9051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:9051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org2.example.com:9052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.farmer.example.com:9052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org2.example.com:9051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org2.example.com:10051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.farmer.example.com:9051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.farmer.example.com:10051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:5984
@@ -505,32 +505,32 @@ services:
     ports:
       - 9051:9051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/farmer.example.com/peers/peer0.farmer.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/farmer.example.com/peers/peer0.farmer.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org2.example.com:
-    container_name: peer1.org2.example.com
+  peer1.farmer.example.com:
+    container_name: peer1.farmer.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org2MSP
+      - CORE_PEER_LOCALMSPID=FarmerMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org2.example.com
-      - CORE_PEER_ADDRESS=peer1.org2.example.com:10051
+      - CORE_PEER_ID=peer1.farmer.example.com
+      - CORE_PEER_ADDRESS=peer1.farmer.example.com:10051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:10051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org2.example.com:10052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.farmer.example.com:10052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:10052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.example.com:10051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org2.example.com:9051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.farmer.example.com:10051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.farmer.example.com:9051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
@@ -551,33 +551,33 @@ services:
     ports:
       - 10051:10051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/farmer.example.com/peers/peer1.farmer.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/farmer.example.com/peers/peer1.farmer.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-        ##org3
-  peer0.org3.example.com:
-    container_name: peer0.org3.example.com
+        ##cerealist
+  peer0.cerealist.example.com:
+    container_name: peer0.cerealist.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org3MSP
+      - CORE_PEER_LOCALMSPID=CerealistMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org3.example.com
-      - CORE_PEER_ADDRESS=peer0.org3.example.com:11051
+      - CORE_PEER_ID=peer0.cerealist.example.com
+      - CORE_PEER_ADDRESS=peer0.cerealist.example.com:11051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org3.example.com:11052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.cerealist.example.com:11052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org3.example.com:11051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org3.example.com:12051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.cerealist.example.com:11051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.cerealist.example.com:12051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb4:5984
@@ -598,32 +598,32 @@ services:
     ports:
       - 11051:11051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/cerealist.example.com/peers/peer0.cerealist.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/cerealist.example.com/peers/peer0.cerealist.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org3.example.com:
-    container_name: peer1.org3.example.com
+  peer1.cerealist.example.com:
+    container_name: peer1.cerealist.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org3MSP
+      - CORE_PEER_LOCALMSPID=CerealistMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org3.example.com
-      - CORE_PEER_ADDRESS=peer1.org3.example.com:12051
+      - CORE_PEER_ID=peer1.cerealist.example.com
+      - CORE_PEER_ADDRESS=peer1.cerealist.example.com:12051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:12051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org3.example.com:12052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.cerealist.example.com:12052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:12052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org3.example.com:12051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org3.example.com:11051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.cerealist.example.com:12051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.cerealist.example.com:11051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:5984
@@ -644,33 +644,33 @@ services:
     ports:
       - 12051:12051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/cerealist.example.com/peers/peer1.cerealist.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/cerealist.example.com/peers/peer1.cerealist.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-        ### org4
-  peer0.org4.example.com:
-    container_name: peer0.org4.example.com
+        ### mills
+  peer0.mills.example.com:
+    container_name: peer0.mills.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org4MSP
+      - CORE_PEER_LOCALMSPID=MillsMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org4.example.com
-      - CORE_PEER_ADDRESS=peer0.org4.example.com:13051
+      - CORE_PEER_ID=peer0.mills.example.com
+      - CORE_PEER_ADDRESS=peer0.mills.example.com:13051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:13051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org4.example.com:13052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.mills.example.com:13052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:13052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org4.example.com:13051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org4.example.com:14051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.mills.example.com:13051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.mills.example.com:14051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb6:5984
@@ -691,32 +691,32 @@ services:
     ports:
       - 13051:13051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/mills.example.com/peers/peer0.mills.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/mills.example.com/peers/peer0.mills.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org4.example.com:
-    container_name: peer1.org4.example.com
+  peer1.mills.example.com:
+    container_name: peer1.mills.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org4MSP
+      - CORE_PEER_LOCALMSPID=MillsMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org4.example.com
-      - CORE_PEER_ADDRESS=peer1.org4.example.com:14051
+      - CORE_PEER_ID=peer1.mills.example.com
+      - CORE_PEER_ADDRESS=peer1.mills.example.com:14051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:14051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org4.example.com:14052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.mills.example.com:14052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:14052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org4.example.com:14051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org4.example.com:13051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.mills.example.com:14051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.mills.example.com:13051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb7:5984
@@ -737,32 +737,32 @@ services:
     ports:
       - 14051:14051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer1.org4.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer1.org4.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/mills.example.com/peers/peer1.mills.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/mills.example.com/peers/peer1.mills.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer0.org5.example.com:
-    container_name: peer0.org5.example.com
+  peer0.baker.example.com:
+    container_name: peer0.baker.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org5MSP
+      - CORE_PEER_LOCALMSPID=BakerMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org5.example.com
-      - CORE_PEER_ADDRESS=peer0.org5.example.com:15051
+      - CORE_PEER_ID=peer0.baker.example.com
+      - CORE_PEER_ADDRESS=peer0.baker.example.com:15051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:15051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org5.example.com:15052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.baker.example.com:15052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:15052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org5.example.com:15051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org5.example.com:16051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.baker.example.com:15051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.baker.example.com:16051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb8:5984
@@ -783,32 +783,32 @@ services:
     ports:
       - 15051:15051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/baker.example.com/peers/peer0.baker.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/baker.example.com/peers/peer0.baker.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org5.example.com:
-    container_name: peer1.org5.example.com
+  peer1.baker.example.com:
+    container_name: peer1.baker.example.com
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - ORDERER_GENERAL_LOGLEVEL=debug
-      - CORE_PEER_LOCALMSPID=Org5MSP
+      - CORE_PEER_LOCALMSPID=BakerMSP
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org5.example.com
-      - CORE_PEER_ADDRESS=peer1.org5.example.com:16051
+      - CORE_PEER_ID=peer1.baker.example.com
+      - CORE_PEER_ADDRESS=peer1.baker.example.com:16051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:16051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org5.example.com:16052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.baker.example.com:16052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:14052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org5.example.com:16051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org5.example.com:15051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.baker.example.com:16051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.baker.example.com:15051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb9:5984
@@ -829,8 +829,8 @@ services:
     ports:
       - 16051:16051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer1.org5.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer1.org5.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/baker.example.com/peers/peer1.baker.example.com/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/baker.example.com/peers/peer1.baker.example.com/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:

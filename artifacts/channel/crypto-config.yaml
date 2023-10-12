@@ -28,12 +28,35 @@ OrdererOrgs:
 # ---------------------------------------------------------------------------
 PeerOrgs:
   # ---------------------------------------------------------------------------
-  # Org1
+  # Broker
   # ---------------------------------------------------------------------------
-  - Name: Org1
-    Domain: org1.example.com
+  - Name: Broker
+    Domain: broker.example.com
     EnableNodeOUs: true
+    Template:
+      Count: 2
+      # Start: 5
+      # Hostname: {{.Prefix}}{{.Index}} # default
+      SANS:
+        - "localhost"
+    Users:
+      Count: 1
 
+  - Name: Farmer
+    Domain: farmer.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+      # Start: 5
+      # Hostname: {{.Prefix}}{{.Index}} # default
+      SANS:
+        - "localhost"
+    Users:
+      Count: 1
+
+  - Name: Cerealist
+    Domain: cerealist.example.com
+    EnableNodeOUs: true
     Template:
       Count: 2
       # Start: 5
@@ -43,59 +66,26 @@ PeerOrgs:
 
     Users:
       Count: 1
-
-  - Name: Org2
-    Domain: org2.example.com
+  - Name: Mills
+    Domain: mills.example.com
     EnableNodeOUs: true
-
     Template:
       Count: 2
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
-
     Users:
       Count: 1
 
-  - Name: Org3
-    Domain: org3.example.com
+  - Name: Baker
+    Domain: baker.example.com
     EnableNodeOUs: true
-
     Template:
       Count: 2
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
-
-    Users:
-      Count: 1
-
-  - Name: Org4
-    Domain: org4.example.com
-    EnableNodeOUs: true
-
-    Template:
-      Count: 2
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
-      SANS:
-        - "localhost"
-
-    Users:
-      Count: 1
-
-  - Name: Org5
-    Domain: org5.example.com
-    EnableNodeOUs: true
-
-    Template:
-      Count: 2
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
-      SANS:
-        - "localhost"
-
     Users:
       Count: 1
