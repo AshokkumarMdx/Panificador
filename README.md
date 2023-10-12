@@ -2,7 +2,7 @@ Steps:
 
 **Clone the repository**
 
-git clone https://github.com/mdxdealstryker/PANIFICADOR-HL-BC.git
+git clone https://github.com/AshokkumarMdx/Panificador.git
 
 **Run Certificates Authority Services for all Orgs**
 
